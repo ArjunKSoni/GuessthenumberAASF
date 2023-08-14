@@ -16,10 +16,10 @@ export default function Play() {
             navigator('/coordinate',{state:{coordinatex:200,coordinatey:400}});
         }
         else if(number<cal){
-            alert("The gussed number is very small")
+            setError("The gussed number is very small")
         }
         else{
-            alert("The gussed number is very big")
+            setError("The gussed number is very big")
         }
         ref.current.focus();
         setNumber('');
@@ -34,13 +34,14 @@ export default function Play() {
             </h1>
             <div className='flex flex-col bg-slate-300 bg-opacity-10 rounded-xl mt-3 justify-center items-center p-4 w-4/5 h-1/4'>
                 <input ref={ref} maxLength={2} autoFocus={true} onChange={(e)=>setNumber(e.target.value)} value={number} className='focus:outline-0 font-extrabold text-center bg-transparent border-b-4 text-red-500 text-3xl w-36' type="text" />
-                <h1 className='font-bold mt-3'>guess a number between 0-99</h1>
+                <h1 className='font-bold mt-3'>{error}</h1>
             </div>
 
             <button onClick={submit} className='px-5 py-3 bg-green-500 rounded-xl text-white text-3xl font-bold mt-6'>
                 Submit
             </button>
             <div className='flex text-center text-xl font-bold flex-col mt-20 bg-slate-300 bg-opacity-10 rounded-xl justify-center items-center p-4 w-4/5'>
+            guess a number between 0-99
              </div>
 
         </div>
