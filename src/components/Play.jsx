@@ -16,10 +16,10 @@ export default function Play() {
             navigator('/coordinate',{state:{coordinatex:200,coordinatey:400}});
         }
         else if(number<cal){
-            setError("The gussed number is very small")
+            alert("The gussed number is very small")
         }
         else{
-            setError("The gussed number is very big")
+            alert("The gussed number is very big")
         }
         ref.current.focus();
         setNumber('');
@@ -41,7 +41,6 @@ export default function Play() {
                 Submit
             </button>
             <div className='flex text-center text-xl font-bold flex-col mt-20 bg-slate-300 bg-opacity-10 rounded-xl justify-center items-center p-4 w-4/5'>
-                {error}
              </div>
 
         </div>
