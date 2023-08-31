@@ -13,27 +13,20 @@ export default function Home() {
                 AASF
             </h1>
             <h3 className='text-xl text-yellow-500'>Guess the number</h3>
-            <div className='flex-1 overflow-scroll bg-slate-300 bg-opacity-10 w-4/5 flex flex-col items-center m-3 text-white p-5 rounded-xl '>
+            <div className='flex overflow-scroll h-1/2 bg-slate-300 bg-opacity-10 w-4/5 flex-col items-center m-3 text-white p-5 rounded-xl '>
                 <h1 className='text-white font-bold text-lg'>select your team</h1>
-                <div onClick={(e)=>{navigator("/play",{ state:{team:1} })}} className='m-1 border-2 rounded px-16 py-3 text-2xl text-orange-500 font-bolder'>
-                    Team 1
-                </div>
-                <div onClick={(e)=>{navigator("/play",{ state:{team:2} })}} className='m-1 border-2 rounded px-16 py-3 text-2xl text-orange-500 font-bolder'>
-                    Team 2
-                </div>
-                <div onClick={(e)=>{navigator("/play",{ state:{team:3} })}} className='m-1 border-2 rounded px-16 py-3 text-2xl text-orange-500 font-bolder'>
-                    Team 3
-                </div>
-                <div onClick={(e)=>{navigator("/play",{ state:{team:4} })}} className='m-1 border-2 rounded px-16 py-3 text-2xl text-orange-500 font-bolder'>
-                    Team 4
-                </div>
-                <div onClick={(e)=>{navigator("/play",{ state:{team:5} })}} className='m-1 border-2 rounded px-16 py-3 text-2xl text-orange-500 font-bolder'>
-                    Team 5
-                </div>
-                <div className=' w-4/5 h-1 bg-black mt-4'></div>
-                <div>
-                    <h1 className='text-2xl text-yellow-500'>Rules</h1>
-                </div>
+                {Array.from(Array(30), (e, i) => {
+                    return (
+                        <div onClick={(e)=>{navigator("/play",{ state:{team:i+1} })}} className='m-1 w-60 text-center border-2 rounded px-16 py-3 text-2xl text-orange-500 font-bolder'>
+                            Team {i+1}
+                        </div>
+                    )
+                })}
+                
+            </div>
+            <div className=' w-4/5 h-1 bg-black mt-4'></div>
+            <div>
+                <h1 className='text-2xl text-yellow-500'>Choose your team</h1>
             </div>
         </div>
     )
