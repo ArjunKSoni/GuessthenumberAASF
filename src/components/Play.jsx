@@ -13,7 +13,7 @@ export default function Play() {
     const location = useLocation();
     const submit=()=>{
         if(number==cal){
-            navigator('/coordinate',{state:{coordinatex:200,coordinatey:400}});
+            navigator('/coordinate',{state:{team:location.state.team}});
         }
         else if(number<cal){
             setError("The gussed number is very small")
