@@ -8,7 +8,7 @@ export default function Play() {
     const [number,setNumber]=useState('');
     const [error,setError]=useState("let's Play");
     useEffect(() => {
-        setCal(Math.floor(Math.random() * 1000))
+        setCal(Math.floor(Math.random() * 5000))
     }, [])
     const location = useLocation();
     const submit=()=>{
@@ -33,7 +33,7 @@ export default function Play() {
                 Team {location.state.team}
             </h1>
             <div className='flex flex-col bg-slate-300 bg-opacity-10 rounded-xl mt-3 justify-center items-center p-4 w-4/5 h-1/4'>
-                <input ref={ref} maxLength={3} autoFocus={true} onChange={(e)=>setNumber(e.target.value)} value={number} className='focus:outline-0 font-extrabold text-center bg-transparent border-b-4 text-red-500 text-3xl w-36' type="text" />
+                <input ref={ref} maxLength={4} autoFocus={true} onChange={(e)=>setNumber(e.target.value)} value={number} className='focus:outline-0 font-extrabold text-center bg-transparent border-b-4 text-red-500 text-3xl w-36' type="text" />
                 <h1 className='font-bold mt-3'>{error}</h1>
             </div>
 
@@ -41,7 +41,7 @@ export default function Play() {
                 Submit
             </button>
             <div className='flex text-center text-xl font-bold flex-col mt-20 bg-slate-300 bg-opacity-10 rounded-xl justify-center items-center p-4 w-4/5'>
-            guess a number between 0-999
+            guess a number between 0-4999
              </div>
 
         </div>
